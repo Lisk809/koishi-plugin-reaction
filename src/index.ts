@@ -1,11 +1,19 @@
-import { Context, Schema } from 'koishi'
+import { Context, Schema } from "koishi";
+import { handler } from "./parse.ts";
 
-export const name = 'test'
+export const name = "test";
 
 export interface Config {}
 
-export const Config: Schema<Config> = Schema.object({})
+export const Config: Schema<Config> = Schema.object({});
 
 export function apply(ctx: Context) {
-  // write your plugin here
+  ctx
+    .command("reaction")
+    .alias("rn")
+    .action(async (_) => {
+      return await fetch("https://chemequations.com/zh/random")
+        .then((html) => html.text())
+        .then(handler);
+    });
 }
