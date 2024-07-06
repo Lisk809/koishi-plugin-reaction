@@ -1,5 +1,5 @@
 import { Context, Schema } from "koishi";
-import { handler } from "./parse.ts";
+import { handler } from "./parse.js";
 
 export const name = "test";
 
