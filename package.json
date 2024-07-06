@@ -17,6 +17,7 @@
     "chatbot",
     "koishi",
     "plugin",
+    "meme",
     "chemistry"
   ],
   "peerDependencies": {
