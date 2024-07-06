@@ -12,8 +12,9 @@ export function apply(ctx: Context) {
     .command("reaction")
     .alias("rn")
     .action(async (_) => {
-      return await fetch("https://chemequations.com/zh/random")
-        .then((html) => html.text())
-        .then(handler);
+    let html=await fetch("https://chemequations.com/zh/random")
+            .then((html) => html.text())
+            .then(handler);
+      return html
     });
 }
